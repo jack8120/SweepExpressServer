@@ -82,7 +82,7 @@ const newCustomer = new customerModel({
 //newCustomer.save();
 
 // Create - extend this url to capture all form fields
-app.post('/customers/create',async(req,res)=>{
+app.post('/.netlify/functions/api/customers/create',async(req,res)=>{
 
     console.log(req.body)
 
@@ -101,7 +101,7 @@ app.post('/customers/create',async(req,res)=>{
 
 // Read all
 
-app.get('/customers/read',async (req,res)=>{
+app.get('/.netlify/functions/api/customers/read',async (req,res)=>{
     const allData = await customerModel.find();
 
     res.send(allData);
@@ -109,7 +109,7 @@ app.get('/customers/read',async (req,res)=>{
 
 // Read
 
-app.get('/customers/read/:id',async (req,res)=>{
+app.get('/.netlify/functions/api/customers/read/:id',async (req,res)=>{
 
     const _id = req.params.id;
 
@@ -121,7 +121,7 @@ app.get('/customers/read/:id',async (req,res)=>{
 
 // Update
 
-app.put('/customers/update/:id', async (req,res)=>{
+app.put('/.netlify/functions/api/customers/update/:id', async (req,res)=>{
     //get the id
     const _id = req.params.id;
   
@@ -138,7 +138,7 @@ app.put('/customers/update/:id', async (req,res)=>{
 
 // Delete
 
-app.delete('/customers/delete/:id', async (req,res)=>{
+app.delete('/.netlify/functions/api/customers/delete/:id', async (req,res)=>{
 
     const _id = req.params.id;
   
